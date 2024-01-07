@@ -9,34 +9,45 @@
     </head>
 
     <body>
+
         <h1 class="text-center">Data Barang</h1>
+
         <p class="text-center">Laporan Data Barang Tahun 2024</p>
+
         <br/>
+
         <table id="table-data" class="table table-bordered">
+
             <thead>
+
                 <tr>
+
                     <th>NO</th>
-                    <th>Tanggal Masuk</th>
-                    <th>Kode Barang Masuk</th>
-                    <th>Jumlah Barang Masuk</th>
+
+                    <th>Tanggal Keluar</th>
+
+                    <th>Kode Barang Keluar</th>
+
+                    <th>Jumlah Barang Keluar</th>
+
                 </tr>
+
             </thead>
 
             <tbody>
 
                 @php $num = 1; @endphp
 
-                @foreach($barang_masuk as $barangmasuk)
+                @foreach($barang_keluar as $barangkeluar)
 
                     <tr>
 
                         <td>{{ $num++ }}</td>
-                        <td>{{ $barangmasuk->tgl_masuk }}</td>
-                        <td>{{ $barangmasuk->kode_barang_masuk }}</td>
-                        <td>{{ $barangmasuk->kode_barang }}</td>
-                        <td>{{ $barangmasuk->barang->nama_barang }}</td>
-                        <td>{{ $barangmasuk->jumlah_masuk }}</td>
-
+                            <td>{{ $barangkeluar->tgl_keluar }}</td>
+                            <td>{{ $barangkeluar->kode_barang_keluar }}</td>
+                            <td>{{ $barangkeluar->jumlah_keluar }}</td>
+                            <td>{{ $barangkeluar->tujuan }}</td>
+                            <td>
                     </tr>
 
                 @endforeach

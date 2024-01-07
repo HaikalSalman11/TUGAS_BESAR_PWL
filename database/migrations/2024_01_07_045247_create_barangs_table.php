@@ -15,12 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('kode_barang')->unique();
             $table->string('nama_barang');
-            $table->string('jenis');
+            $table->unsignedBigInteger('jenis_barang_id');
             $table->integer('harga');
-     
+            $table->string('cover')->nullable();
+            $table->integer('stok_awal')->default(0); // Kolom stok_awal ditambahkan
             $table->timestamps();
         
-            
+            $table->foreign('jenis_barang_id')->references('id')->on('jenis_barangs');
         });
     }
 
