@@ -42,15 +42,7 @@ Route::middleware('auth')->group(function () {
     Route::match(['put', 'patch'], '/barang/{id}',[BarangController::class, 'update'])->name('Barang.update');
    
 });
-Route::middleware('auth')->group(function () {
-    Route::get('/BarangKeluar', [BarangKeluarController::class, 'index'])->name('BarangKeluar');
-    Route::get('/BarangKeluar/create', [BarangKeluarController::class, 'create'])->name('BarangKeluar.create');
-    Route::post('/BarangKeluar', [BarangKeluarController::class, 'store'])->name('BarangKeluar.store');
-    Route::delete('/BarangKeluar/{id}', [BarangKeluarController::class, 'destroy'])->name('BarangKeluar.destroy');
-    Route::get('/BarangKeluar/{id}/edit',[BarangKeluarController::class, 'edit'])->name('BarangKeluar.edit');
-    Route::match(['put', 'patch'], '/BarangKeluar/{id}',[BarangKeluarController::class, 'update'])->name('BarangKeluar.update');
-    
-});
+//Barang Keluar
 Route::middleware('auth')->group(function () {
     Route::get('/BarangKeluar', [BarangKeluarController::class, 'index'])->name('BarangKeluar');
     Route::get('/BarangKeluar/create', [BarangKeluarController::class, 'create'])->name('BarangKeluar.create');
@@ -59,8 +51,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/BarangKeluar/{id}/edit',[BarangKeluarController::class, 'edit'])->name('BarangKeluar.edit');
     Route::match(['put', 'patch'], '/BarangKeluar/{id}',[BarangKeluarController::class, 'update'])->name('BarangKeluar.update');
     Route::get('/get-nama-barang', [BarangKeluarController::class, 'getNamaBarangByKodeBarang']);  
-
+    Route::get('/BarangKeluar/print', [BarangKeluarController::class, 'print'])->name('BarangKeluar.print');
 });
+
 //barang masuk
 Route::middleware('auth')->group(function () {
     Route::get('/BarangMasuk', [BarangMasukController::class, 'index'])->name('BarangMasuk');
@@ -70,17 +63,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/BarangMasuk/{id}/edit',[BarangMasukController::class, 'edit'])->name('BarangMasuk.edit');
     Route::match(['put', 'patch'], '/BarangMasuk/{id}',[BarangMasukController::class, 'update'])->name('BarangMasuk.update');
     Route::get('/get-nama-barang', [BarangMasukController::class, 'getNamaBarangByKodeBarang']);
-});
-
-Route::middleware('auth')->group(function () {
-    Route::get('/BarangMasuk', [BarangMasukController::class, 'index'])->name('BarangMasuk');
-    Route::get('/BarangMasuk/create', [BarangMasukController::class, 'create'])->name('BarangMasuk.create');
-    Route::post('/BarangMasuk', [BarangMasukController::class, 'store'])->name('BarangMasuk.store');
-    Route::delete('/BarangMasuk/{id}', [BarangMasukController::class, 'destroy'])->name('BarangMasuk.destroy');
-    Route::get('/BarangMasuk/{id}/edit',[BarangMasukController::class, 'edit'])->name('BarangMasuk.edit');
-    Route::match(['put', 'patch'], '/BarangMasuk/{id}',[BarangMasukController::class, 'update'])->name('BarangMasuk.update');
-    Route::get('/get-nama-barang', [BarangMasukController::class, 'getNamaBarangByKodeBarang']);
     Route::get('/BarangMasuk/print', [BarangMasukController::class, 'print'])->name('BarangMasuk.print');
+    Route::get('/BarangMasuk/export', [BarangMasukController::class,'export'])->name('BarangMasuk.export');
 
 });
 Route::middleware('auth')->group(function () {

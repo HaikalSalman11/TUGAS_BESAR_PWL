@@ -10,7 +10,7 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
                     <x-primary-button tag="a" href="{{ route('BarangKeluar.create') }}">Add</x-primary-button>
-                    <x-primary-button tag="a" href="{{route('BarangMasuk.print')}}">Cetak Barang Keluar</x-primary-button>
+                    <x-primary-button tag="a" href="{{route('BarangKeluar.print')}}">Cetak Barang Keluar</x-primary-button>
                     <br /><br />
                     <x-table>
                         <x-slot name="header">
