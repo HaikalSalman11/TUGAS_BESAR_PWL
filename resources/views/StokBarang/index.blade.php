@@ -12,7 +12,7 @@
 
                 <x-primary-button tag="a" href="{{ route('BarangMasuk.create') }}">Add</x-primary-button>
 
-                <x-primary-button tag="a" href="{{route('BarangMasuk.print')}}">Cetak Barang Masuk</x-primary-button>
+                <x-primary-button tag="a" href="{{route('BarangMasuk.print')}}">Cetak Stok Barang</x-primary-button>
 
                     <br /><br />
 
@@ -23,15 +23,9 @@
                             <tr>
 
                                 <th>#</th>
-
-                                <th>Tanggal Masuk</th>
-
-                                <th>Kode Barang Masuk</th>
-
+                                <th>Kode Barang</th>
                                 <th>Nama Barang</th>
-
-                                <th>Jumlah Barang Masuk</th>
-
+                                <th>Jumlah Stok</th>
                                 <th>Aksi</th>
 
                             </tr>
@@ -40,18 +34,15 @@
 
                         @php $num = 1; @endphp
 
-                        @foreach($barang_masuk as $barangmasuk)
+                        @foreach($stok_barang as $stokbarang)
 
-                        <tr>
+                        {{-- <tr>
 
                             <td>{{ $num++ }}</td>
-
-                            <td>{{$barangmasuk->tgl_masuk}}</td>
-
-                            <td>{{ $barangmasuk->kode_barang_masuk }}</td>
+                            <td>{{$stokbarang->tgl_masuk}}</td>
+                            <td>{{ $stokbarang->kode_barang_masuk }}</td>
                             <td></td>
-
-                            <td>{{ $barangmasuk->jumlah_masuk}}</td> 
+                            <td>{{ $stokbarang->jumlah_masuk}}</td> 
                             
                             <td></td>
 
@@ -67,7 +58,7 @@
                                 </form>
                             </td>
 
-                        </tr>
+                        </tr> --}}
 
                         @endforeach
 
