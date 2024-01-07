@@ -4,6 +4,7 @@
         <div class="grid grid-cols-12 gap-6">
         </div>
         <x-primary-button tag="a" href="{{route('BarangMasuk.create')}}">Add</x-primary-button>
+        <x-primary-button tag="a" href="{{route('BarangMasuk.print')}}">Cetak Barang Masuk</x-primary-button>
         <br /><br />
                     <x-table>
                         <x-slot name="header">

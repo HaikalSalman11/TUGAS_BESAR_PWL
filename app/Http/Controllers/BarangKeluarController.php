@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Barang;
 use App\Models\BarangKeluar;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf as FacadePdf;
+
+use PDF;
 
 class BarangKeluarController extends Controller
 {
@@ -97,6 +100,17 @@ class BarangKeluarController extends Controller
         );
 
         return redirect()->route('BarangKeluar')->with($notification);
+    }
+    public function print()
+
+    {
+
+        $barang_keluar = BarangKeluar::all();
+
+        $pdf = FacadePdf::loadView('BarangKeluar.print', ['barang_keluar' => $barang_keluar]);
+
+        return $pdf->download('data_barang_masuk.pdf');
+
     }
 
 }
